@@ -3,7 +3,7 @@
 
 * Documentation for functions can be found in atomSurfaceInteractionsSI.m
 
-* This package was made to coencide with ```insert link to paper```, please consider citing ```insert link to citation``` if you found this usefull in your work.
+* This package was made to coencide with a paper currently submitted.
 
 ## Example usage of "atomSurfaceInteractionsSI"
 A mathematica package can be called using the following commands
