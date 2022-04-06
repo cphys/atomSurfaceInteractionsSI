@@ -1,8 +1,4 @@
-# atomSurfaceInteractionsSI
-
-
-[![DOI](https://zenodo.org/badge/451110437.svg)](https://zenodo.org/badge/latestdoi/451110437)
-
+# atomSurfaceInteractionsSI [![DOI](https://zenodo.org/badge/451110437.svg)](https://zenodo.org/badge/latestdoi/451110437)
 
 * A Mathematica package for carrying out temperature dependent atom-surface interactions for Silicon
 
