@@ -7,16 +7,16 @@ dynPol::usage =
 	input:       \[Omega]Values (float):               frequency in atomic units
 
 	options:     workingPrecision(32):                 the precision used in internal computations
-                     numberOfTerms(All):                   number of oscillators to include in sum
-                     element(helium):                      atom to use in atom-surface calculation 
+                 numberOfTerms(All):                   number of oscillators to include in sum
+                 element(helium):                      atom to use in atom-surface calculation 
 
 	returns:     dynamic polarizability of selected element. ";
    
 hFun::usage = 
  "hFun[temperature, omega,  pValue]
 	input:       temperature:                          temperature [K]
-                     omega:                                frequency atomic units
-		     pValue:                               pvalue
+                 omega:                                frequency atomic units
+                 pValue:                               pvalue
 
 	options:     workingPrecision(32):                 the precision used in internal computations
 
@@ -27,11 +27,11 @@ c30::usage =
 	input:       temperature:                          temperature [K]
 
 	options:     workingPrecision(32):                 the precision used in internal computations
-                     precisionGoal (MachinePrecision):     digits of precision sought                     
-                     element(helium):                      atom to use in atom-surface calculation
-                     method(DoubleExponential):            integration method to use                    
-                     maxRecursion(100):                    maximum number of recursive subdivisions
-                     outputUnits(atom):                    units  to use in output 
+                 precisionGoal (MachinePrecision):     digits of precision sought                     
+                 element(helium):                      atom to use in atom-surface calculation
+                 method(DoubleExponential):            integration method to use                    
+                 maxRecursion(100):                    maximum number of recursive subdivisions
+                 outputUnits(atom):                    units  to use in output 
  		 
 	returns:     C3 term from Casimir-Polder potential. ";
 	
@@ -40,15 +40,15 @@ cFour::usage =
 	input:       temperature:                          temperature [K]
 
 	options:     workingPrecision(32):                 the precision used in internal computations               
-                     element(helium):                      atom to use in atom-surface calculation
-                     outputUnits(atom):                    units  to use in output 
+                 element(helium):                      atom to use in atom-surface calculation
+                 outputUnits(atom):                    units  to use in output 
 	 
 	returns:     C4 term from Casimir-Polder potential. ";
 	
 diFunSiSL::usage = 
  "diFunSiSL[temperature, omega]
 	input:       temperature:                          temperature [K]
-		     omega(float):                         frequency in atomic units
+                 omega(float):                         frequency in atomic units
 
 	options:     workingPrecision(32):                 the precision used in internal computations          
 		 
@@ -57,7 +57,7 @@ diFunSiSL::usage =
 diFunSiCM::usage = 
  "diFunSiCM[temperature, omega]
 	input:       temperature:                          temperature [K]
-		     omega:                                (float)frequency in atomic units
+                 omega:                                (float)frequency in atomic units
 
 	options:     workingPrecision(32):                 the precision used in internal computations
 		 
@@ -66,7 +66,7 @@ diFunSiCM::usage =
 diFunSiGr::usage = 
  "diFunSiGr[temperature, omega]
 	input:       temperature:                          temperature [K]
-		     omega:                                (float)frequency in atomic units
+                 omega:                                (float)frequency in atomic units
 
 	options:     workingPrecision(32):                 the precision used in internal computations
  
@@ -76,47 +76,47 @@ diFunSiGr::usage =
 casimirPolderSi::usage = 
  "casimirPolderSi[temperature, zValue]
 	input:       temperature:                          temperature [K]
-		     zValue:                               atom-wall distance
+                 zValue:                               atom-wall distance
 
 	options:     workingPrecision(32):                 the precision used in internal computations
-                     precisionGoal (MachinePrecision):     digits of precision sought                     
-                     element(helium):                      atom to use in atom-surface calculation
+                 precisionGoal (MachinePrecision):     digits of precision sought                     
+                 element(helium):                      atom to use in atom-surface calculation
 	 
 	returns:     Integral term from Casimir-Polder potential. ";
 
 f0::usage = 
  "f0[temperature, zValue]
 	input:       temperature:                          temperature [K]
-		     zValue:                               atom-wall distance
+                 zValue:                               atom-wall distance
 
 
 	options:     workingPrecision(32):                 the precision used in internal computations
-                     outputUnits(atom):                    units  to use in output                     
-                     element(helium):                      atom to use in atom-surface calculation		 
+                 outputUnits(atom):                    units  to use in output                     
+                 element(helium):                      atom to use in atom-surface calculation		 
 	returns:     f0 term for Casimir-Polder potential. ";
 
 						
 CPintegrand::usage = 
  "CPintegrand[numbTerms, temperature, zValue]
 	input:       numbTerms:                            (function) potential as a function of
-                     temperature:                          temperature [K]
-		     zValue:                               atom-wall distance
+                 temperature:                          temperature [K]
+                 zValue:                               atom-wall distance
 
 	options:     workingPrecision(32):                 the precision used in internal computations
-                     precisionGoal (MachinePrecision):     digits of precision sought                     
-                     element(helium):                      atom to use in atom-surface calculation
+                 precisionGoal (MachinePrecision):     digits of precision sought                     
+                 element(helium):                      atom to use in atom-surface calculation
 		 
 	returns:     Integrand for CP-potential. ";	
 						
 CPfull::usage = 
  "CPfull[temperature,zValue]
 	input:       temperature:                          temperature [K]
-		     zValue:                               atom-wall distance
+                 zValue:                               atom-wall distance
 
 	options:     workingPrecision(32):                 the precision used in internal computations
-                     precisionGoal (MachinePrecision):     digits of precision sought                     
-                     element(helium):                      atom to use in atom-surface calculation
-                     nSumTerms(50):                        number of terms to use before extrapolation 		
+                 precisionGoal (MachinePrecision):     digits of precision sought                     
+                 element(helium):                      atom to use in atom-surface calculation
+                 SumTerms(50):                         number of terms to use before extrapolation 		
 	 
 	returns:     Full temperature dependent Casimir-Polder potential. ";
 	
@@ -470,62 +470,6 @@ dynPol[
         ec = Sqrt[fnc/(dynPolZero - dynP[0])];
         
         Return[SetPrecision[dynP[\[Omega]] + fnc/(ec ^2 - (\[HBar]*\[Omega])^2), wp]]]
-        
-diFunSiCM[
-	temp_,
-	energy_,
-	OptionsPattern[{
-	workingPrecision -> 32,
-	roomTemperature -> 293}]] := 
-  diFunSiCM[temp, energy] =
-    Module[{
-    ak,
-    \[Omega]k,
-    \[Gamma]k,
-    \[Gamma]pk,
-    \[CapitalDelta]T,
-    coeffs, fitFun,rhoFun,
-    \[Omega] = energy,
-    T = temp,
-    rmTmp = OptionValue[roomTemperature],
-    wp = OptionValue[workingPrecision]},
-   
-   \[Omega] = SetPrecision[\[Omega], wp];
-   T = SetPrecision[T, wp];
-   
-   \[CapitalDelta]T = SetPrecision[(T - rmTmp)/rmTmp, wp];
-   
-   coeffs = {
-   ak[1]->0.0048696128333626375542549925093309867190883716484779276889`32.-
-   0.0008936146662200208985501543160480642566885605565071363909`32. \[CapitalDelta]T+
-   0.0007853554005988041416461844798016686777979381100426017871`32. \[CapitalDelta]T^2,
-   ak[2]->0.7722063733252617625892424059712809167105707294371352126484`32.+
-   0.0059835947019468031853435991544884247281253621596770454425`32. \[CapitalDelta]T+
-   0.0005586097160367060800590383095668561284519802189854474088`32. \[CapitalDelta]T^2,
-   \[Omega]k[1]->0.1289322568371133982452705357634681028850394688941310723087`32.-
-   0.004570590465075703632374111485379289584620194089455898097`32. \[CapitalDelta]T+
-   0.0009420524819284027934288701710058733496263579561688334749`32. \[CapitalDelta]T^2,
-   \[Omega]k[2]->0.312947418993925004135227646050038866618358894374744851117`32.+
-   0.0006404754327359217805907301952854304624688071596870436859`32. \[CapitalDelta]T-
-   0.0006526791512090928730831331487105815297675163905465442224`32. \[CapitalDelta]T^2,
-   \[Gamma]k[1]->0.0187518089756987185091815628732589625677689652830381904637`32.+
-   0.0009273743897571212275140220256663896686527115880474067856`32. \[CapitalDelta]T+
-   0.0016510924454748934125206477800967654327022067977832572907`32. \[CapitalDelta]T^2,
-   \[Gamma]k[2]->0.0974187443360465869447508041242735458068527746320664114541`32.+
-   0.0481407270741869772555733246144993797245545670965852840827`32. \[CapitalDelta]T-
-   0.0151765450422552680330623092033012039621613938077261403962`32. \[CapitalDelta]T^2,
-   \[Gamma]pk[1]->0.1386917953069810006160834682622870207756410759295265993979`32.+
-   0.0116097579932173565553556902215582402916131729468944843792`32. \[CapitalDelta]T-
-   0.0154301624764129483240179697881735859894588841613788670849`32. \[CapitalDelta]T^2,
-   \[Gamma]pk[2]->0.0950465426170113452851010675270748842034803967604293999891`32.+
-   0.0560661525053894053710405452826046683261067296286291117479`32. \[CapitalDelta]T-
-   0.0194768645992677257314602442739274097063117131696813558843`32. \[CapitalDelta]T^2};
-   
-   fitFun =
-   Sum[(ak[k]*(\[Omega]k[k]^2 - I*\[Gamma]pk[k]*\[Omega]))/(\[Omega]k[k]^2 - I*\[Omega]*\[Gamma]k[k] - \[Omega]^2),{k, 2}];
-   rhoFun=SetPrecision[fitFun /. coeffs, wp];
-   
-   Return[(-1-2*(rhoFun))/(-1+(rhoFun))]]
 
                     
 diFunSiSL[
@@ -553,30 +497,14 @@ diFunSiSL[
    \[CapitalDelta]T = SetPrecision[(T - rmTmp)/rmTmp, wp];
    
    coeffs = {
-   ak[1]->2.8919838690701850528055142365337798028879593376224077450042`32.-
-   0.633872208298529363459618043674649094322131523947129524857`32. \[CapitalDelta]T+
-   0.3889683358354273538425166190418525167676666334871495496889`32. \[CapitalDelta]T^2,
-   ak[2]->7.8641838151479108315469249859312748215349689888198978358678`32.+
-   1.1209788546238364447450716803378585700076457242434586626545`32. \[CapitalDelta]T-
-   0.3754427036937993257765664268361298131258977505166395324107`32. \[CapitalDelta]T^2,
-   \[Omega]k[1]->0.1255316808844417556447471687664107606254147851360644238252`32.-
-   0.0021536437226537829159945728121532685301851745474090454224`32. \[CapitalDelta]T-
-   0.0000990985335284814181762031913334199458272252646660941171`32. \[CapitalDelta]T^2,
-   \[Omega]k[2]->0.1543875997079725833192207826984552208272053847112291703529`32.-
-   0.004407568082221593289041611816218116609924712610216100702`32. \[CapitalDelta]T+
-   0.0003685367926367219893855669957768947444201922197919461636`32. \[CapitalDelta]T^2,
-   \[Gamma]k[1]->0.0130810703467084695189864924564736417849404188235771776043`32.-
-   0.0003701311300762934649180324426570142948269268014773979785`32. \[CapitalDelta]T+
-   0.00181856785725007198106032807203161139979907845184369528`32. \[CapitalDelta]T^2,
-   \[Gamma]k[2]->0.0298038760801996059018739534363429262679720492740772656176`32.+
-   0.0040109150721308753881256573312601701314174366256471700993`32. \[CapitalDelta]T-
-   0.0004602127078162135966670626162316693279245696842013445619`32. \[CapitalDelta]T^2,
-   \[Gamma]pk[1]->0.057316385781155560172601707109158535918662171652026441465`32.-
-   0.0126109127331666601066020628642770350556260697991091204531`32. \[CapitalDelta]T-
-   0.0012106922165056061105917496170684722216593652964651564729`32. \[CapitalDelta]T^2,
-   \[Gamma]pk[2]->0.0086717632665016052720581658218628429839454678302110727485`32.+
-   0.0168824657490159140785240359493340756808737863435663119145`32. \[CapitalDelta]T-
-   0.0041169889805495414735311227164094634358078124140203500022`32. \[CapitalDelta]T^2};
+   ak[1]->2.883 - 0.6099 * \[CapitalDelta]T+0.3812 * \[CapitalDelta]T^2,
+   \[Omega]k[1]->0.1256 - 0.001567 * \[CapitalDelta]T-0.0003441 * \[CapitalDelta]T^2,
+   \[Gamma]k[1]->0.0130-0.0002181* \[CapitalDelta]T + 0.001789 * \[CapitalDelta]T^2,
+   \[Gamma]pk[1]->0.05572 - 0.01028 * \[CapitalDelta]T - 0.001878 * \[CapitalDelta]T^2,
+   ak[2]->7.870 + 1.080 * \[CapitalDelta]T - 0.3585 * \[CapitalDelta]T^2,
+   \[Omega]k[2]->0.1530 - 0.003124 * \[CapitalDelta]T + 0.00009198 * \[CapitalDelta]T^2,
+   \[Gamma]k[2]->0.03177 + 0.004041* \[CapitalDelta]T - 0.0007744 * \[CapitalDelta]T^2,
+   \[Gamma]pk[2]->0.008528 + 0.0170 * \[CapitalDelta]T - 0.004150 * \[CapitalDelta]T^2};
    
    fitFun =
    1+Sum[(ak[k]*(\[Omega]k[k]^2 - I*\[Gamma]pk[k]*\[Omega]))/(\[Omega]k[k]^2 - I*\[Omega]*\[Gamma]k[k] - \[Omega]^2),{k, 2}];
@@ -596,7 +524,7 @@ hFun[
      p = pValue,
      wp = OptionValue[workingPrecision]},
      
-     eps = SetPrecision[diFunSiCM[T, \[Omega], workingPrecision -> wp], wp];
+     eps = SetPrecision[diFunSiSL[T, \[Omega], workingPrecision -> wp], wp];
      p = SetPrecision[p, wp];
      
      Hfun = 
@@ -620,7 +548,7 @@ dhFun[
     p = pValue,
     wp = OptionValue[workingPrecision]},
    
-   eps = SetPrecision[diFunSiCM[T, \[Omega], workingPrecision -> wp], wp]; 
+   eps = SetPrecision[diFunSiSL[T, \[Omega], workingPrecision -> wp], wp]; 
    p = SetPrecision[p, wp]; 
    dHfun = SetPrecision[(p (eps^2 (-1 + 3 p^2) + 
    (-1 + p) (1 + p) (3 - 4 p Sqrt[-1 + eps + p^2] + 
@@ -644,7 +572,7 @@ ddhFun[
      \[Omega] = omega,
      p = pValue,
      wp = OptionValue[workingPrecision]},
-     eps = SetPrecision[diFunSiCM[T, \[Omega], workingPrecision -> wp], wp];
+     eps = SetPrecision[diFunSiSL[T, \[Omega], workingPrecision -> wp], wp];
      p = SetPrecision[p, wp];
      ddHfun = 
      SetPrecision[
@@ -682,7 +610,7 @@ c30[
      \[HBar] = 1;
      
      (* The dielectric function *)
-     eps = SetPrecision[diFunSiCM[T, I * \[Omega], workingPrecision -> wp], wp];
+     eps = SetPrecision[diFunSiSL[T, I * \[Omega], workingPrecision -> wp], wp];
      alpha = SetPrecision[dynPol[I*\[Omega], element -> el, workingPrecision -> wp],wp];
      
      int = SetPrecision[\[HBar]/(4*\[Pi])*alpha*(eps - 1)/(eps + 1), wp] /. \[Omega] -> x;
@@ -717,7 +645,64 @@ cFour[
    c4 = (\[HBar]*c)/(2*\[Pi])*3/8*alpha*
      NIntegrate[Hfun/p^4, {p, 1, \[Infinity]}, 
       WorkingPrecision -> wp];
-   If[ou!="eV", c4, c4*EheV*aoAngst^4]] 
+   If[ou!="eV", c4, c4*EheV*aoAngst^4]]
+   
+
+diFunSiCM[
+	temp_,
+	energy_,
+	OptionsPattern[{
+	workingPrecision -> 32,
+	roomTemperature -> 293}]] := 
+  diFunSiCM[temp, energy] =
+    Module[{
+    ak,
+    \[Omega]k,
+    \[Gamma]k,
+    \[Gamma]pk,
+    \[CapitalDelta]T,
+    coeffs, fitFun,rhoFun,
+    \[Omega] = energy,
+    T = temp,
+    rmTmp = OptionValue[roomTemperature],
+    wp = OptionValue[workingPrecision]},
+   
+   \[Omega] = SetPrecision[\[Omega], wp];
+   T = SetPrecision[T, wp];
+   
+   \[CapitalDelta]T = SetPrecision[(T - rmTmp)/rmTmp, wp];
+   
+   coeffs = {
+   ak[1]->0.0045381313128363116378641526696531473955226465439208256899`32.-
+   0.0014041571429889793685777989770024842104584301039533440141`32. \[CapitalDelta]T+
+   0.001233501505770926718450455753426145913570075144509526832`32. \[CapitalDelta]T^2,
+   \[Omega]k[1]->0.1289563873995392140852661237925889587195358568158842680856`32.-
+   0.0045458292732253475320124444249359485960680301852645455372`32. \[CapitalDelta]T+
+   0.0010025559589832103699482759873679377853006591977372727944`32. \[CapitalDelta]T^2,
+   \[Gamma]k[1]->0.0184772034636986258561894287966463713980451987536900253322`32.+
+   0.0012889634437332455285820306836821846550670627050422843632`32. \[CapitalDelta]T+
+   0.0019724295041701189618375045638923514161358642139859695624`32. \[CapitalDelta]T^2,
+   \[Gamma]pk[1]->0.1396959807967637117204306077409122485001531015242830261301`32.+
+   0.0112525711834702341535808666327740021923825930766868295229`32. \[CapitalDelta]T-
+   0.0160400726444788493942895605910494099089661867535224577117`32. \[CapitalDelta]T^2,
+   ak[2]->0.7830185637223156028702035639606803068138589943354795716049`32.+
+   0.0089004815132078805219367930017642244450342855861211158458`32. \[CapitalDelta]T-
+   0.0026825490377370665026255988520256388713044468211065373644`32. \[CapitalDelta]T^2,
+   \[Omega]k[2]->0.3220766338118797835112246169112735877922636691187805153875`32.+
+   0.0029914451154125358546033169091591214290242423039513930482`32. \[CapitalDelta]T-
+   0.0032507937785891624602540240161584524789104294460776843674`32. \[CapitalDelta]T^2,
+   \[Gamma]k[2]->0.0991007210511140024485944012087291915935267759766213501175`32.+
+   0.0441969012759965349013251676764703952316660144612139549204`32. \[CapitalDelta]T-
+   0.0140404589820649679931581480267923794287904119649240093998`32. \[CapitalDelta]T^2,
+   \[Gamma]pk[2]->0.0933053159682113170682895214726055340728577160219129972725`32.+
+   0.0471649060870735605345849193222881369651180014472512429213`32. \[CapitalDelta]T-
+   0.0155397159534534818811646360488221797360866876762335087269`32. \[CapitalDelta]T^2};
+   
+   fitFun =
+   Sum[(ak[k]*(\[Omega]k[k]^2 - I*\[Gamma]pk[k]*\[Omega]))/(\[Omega]k[k]^2 - I*\[Omega]*\[Gamma]k[k] - \[Omega]^2),{k, 2}];
+   rhoFun=SetPrecision[fitFun /. coeffs, wp];
+   
+   Return[(-1-2*(rhoFun))/(-1+(rhoFun))]]
    
 diFunSiGr[
   	temp_,
@@ -975,7 +960,7 @@ f0[
     kb =  SetPrecision[3.1668115634556072660807*10^-6, wp];
     
     (* The dielectric function *)
-    epZro = SetPrecision[diFunSiCM[T, 0, workingPrecision -> wp], wp];
+    epZro = SetPrecision[diFunSiSL[T, 0, workingPrecision -> wp], wp];
     
     (* The dynamic polarizabitliy as defined in the function above *)
     alphZro = SetPrecision[dynPol[0,element -> el, workingPrecision -> wp],wp];
